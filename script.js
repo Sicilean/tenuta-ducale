@@ -164,7 +164,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------
-     5. Scroll-reveal Animations
+     5. Gallery Carousel Nav (mobile)
+     ------------------------------------------ */
+  const galleryGrid = document.querySelector('.gallery-grid');
+  const galleryPrev = document.querySelector('.gallery-nav__prev');
+  const galleryNext = document.querySelector('.gallery-nav__next');
+
+  if (galleryGrid && galleryPrev && galleryNext) {
+    function scrollGallery(dir) {
+      const item = galleryGrid.querySelector('.gallery-item');
+      if (!item) return;
+      const scrollAmount = item.offsetWidth + 12;
+      galleryGrid.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+    }
+
+    galleryPrev.addEventListener('click', () => scrollGallery(-1));
+    galleryNext.addEventListener('click', () => scrollGallery(1));
+  }
+
+  /* ------------------------------------------
+     6. Scroll-reveal Animations
      ------------------------------------------ */
   const fadeEls = document.querySelectorAll('.fade-in');
 
