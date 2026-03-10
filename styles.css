@@ -104,6 +104,27 @@ h4 { font-size: 1.5rem; margin-bottom: 0.5rem; }
 p { margin-bottom: 1rem; }
 p:last-child { margin-bottom: 0; }
 
+/* Ornamento decorativo sotto gli h2 di sezione */
+main:not(.page-content) h2::after,
+.form-section .section-header h2::after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 20px;
+  margin: 0.75rem 0 0;
+  background: url('public/Oggetto-vettoriale-avanzato-17.png') no-repeat center / contain;
+}
+
+main:not(.page-content) .section-header h2::after,
+.form-section .section-header h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section--dark h2::after {
+  filter: brightness(1.8);
+}
+
 /* Drop cap — capolettera nei contenuti principali */
 main .two-col__text > p:first-of-type::first-letter,
 main .process-step__content > p:first-of-type::first-letter {
@@ -1998,6 +2019,10 @@ select:focus-visible {
   }
   .two-col__text {
     text-align: center;
+  }
+  main:not(.page-content) .two-col__text h2::after {
+    margin-left: auto;
+    margin-right: auto;
   }
   .process-step__content {
     text-align: center;
