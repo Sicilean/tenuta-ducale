@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -88,8 +88,8 @@
     <section class="section" aria-labelledby="oil-intro-heading">
       <div class="container">
         <div class="two-col fade-in">
-          <div class="two-col__img">
-            <!-- Sostituire con: <img src="img/olio-bottiglia.webp" alt="Bottiglia di olio extravergine Tenuta Ducale" loading="lazy" width="600" height="450"> -->
+          <div class="two-col__img two-col__img--bottle">
+            <img src="public/Bottiglia-tenuta-ducale.webp" alt="Bottiglia di olio extravergine Tenuta Ducale" loading="lazy" width="600" height="450">
           </div>
           <div class="two-col__text">
             <h2 id="oil-intro-heading" data-i18n="oil.intro.title">Il Nostro Olio Extravergine</h2>
@@ -126,78 +126,60 @@
 
         <div class="cert-badges fade-in">
           <img src="public/Pubblicazioni e Premi/Logo_it_IGP_4c.svg.png" alt="Indicazione Geografica Protetta (IGP)" width="120" height="120" loading="lazy">
+          <img src="public/eu-organic-logo-600x400_0.png" alt="Certificazione Biologica Unione Europea" width="150" height="100" loading="lazy">
         </div>
 
-        <div class="analysis-grid fade-in">
-          <a href="public/analisi olio 5 anni/Analisi IGP 2025.pdf" class="analysis-card" target="_blank" rel="noopener" download>
-            <div class="analysis-card__year">2025</div>
-            <div class="analysis-card__info">
+        <div class="charts-grid fade-in">
+          <div class="chart-card">
+            <h3 data-i18n="oil.chart1.title">Acidità e Perossidi</h3>
+            <canvas id="chart-acidita-perossidi"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3 data-i18n="oil.chart2.title">Polifenoli Totali</h3>
+            <canvas id="chart-polifenoli"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3 data-i18n="oil.chart3.title">Analisi Sensoriale</h3>
+            <canvas id="chart-sensoriale"></canvas>
+          </div>
+        </div>
+
+        <div class="analysis-dropdown fade-in">
+          <button class="analysis-dropdown__toggle" aria-expanded="false" data-i18n="oil.pdf.toggle">
+            <svg class="analysis-dropdown__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/></svg>
+            Scarica le Analisi PDF
+            <svg class="analysis-dropdown__chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 10l5 5 5-5z" fill="currentColor"/></svg>
+          </button>
+          <div class="analysis-dropdown__content">
+            <a href="public/analisi olio 5 anni/Analisi IGP 2025.pdf" class="analysis-card" target="_blank" rel="noopener" download>
+              <span class="analysis-card__year">2025</span>
               <span class="analysis-card__label">Analisi IGP</span>
-              <span class="analysis-card__action">Scarica PDF
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <a href="public/analisi olio 5 anni/analisi 2024.pdf" class="analysis-card" target="_blank" rel="noopener" download>
-            <div class="analysis-card__year">2024</div>
-            <div class="analysis-card__info">
+            </a>
+            <a href="public/analisi olio 5 anni/analisi 2024.pdf" class="analysis-card" target="_blank" rel="noopener" download>
+              <span class="analysis-card__year">2024</span>
               <span class="analysis-card__label">Analisi olio</span>
-              <span class="analysis-card__action">Scarica PDF
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <a href="public/analisi olio 5 anni/analisi 2024 2.pdf" class="analysis-card" target="_blank" rel="noopener" download>
-            <div class="analysis-card__year">2024</div>
-            <div class="analysis-card__info">
+            </a>
+            <a href="public/analisi olio 5 anni/analisi 2024 2.pdf" class="analysis-card" target="_blank" rel="noopener" download>
+              <span class="analysis-card__year">2024</span>
               <span class="analysis-card__label">Analisi olio (2)</span>
-              <span class="analysis-card__action">Scarica PDF
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <a href="public/analisi olio 5 anni/Analisi 2023.pdf" class="analysis-card" target="_blank" rel="noopener" download>
-            <div class="analysis-card__year">2023</div>
-            <div class="analysis-card__info">
+            </a>
+            <a href="public/analisi olio 5 anni/Analisi 2023.pdf" class="analysis-card" target="_blank" rel="noopener" download>
+              <span class="analysis-card__year">2023</span>
               <span class="analysis-card__label">Analisi olio</span>
-              <span class="analysis-card__action">Scarica PDF
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <a href="public/analisi olio 5 anni/Analisi 2022.pdf" class="analysis-card" target="_blank" rel="noopener" download>
-            <div class="analysis-card__year">2022</div>
-            <div class="analysis-card__info">
+            </a>
+            <a href="public/analisi olio 5 anni/Analisi 2022.pdf" class="analysis-card" target="_blank" rel="noopener" download>
+              <span class="analysis-card__year">2022</span>
               <span class="analysis-card__label">Analisi olio</span>
-              <span class="analysis-card__action">Scarica PDF
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <a href="public/analisi olio 5 anni/2021 Analisi olio.pdf" class="analysis-card" target="_blank" rel="noopener" download>
-            <div class="analysis-card__year">2021</div>
-            <div class="analysis-card__info">
+            </a>
+            <a href="public/analisi olio 5 anni/2021 Analisi olio.pdf" class="analysis-card" target="_blank" rel="noopener" download>
+              <span class="analysis-card__year">2021</span>
               <span class="analysis-card__label">Analisi olio</span>
-              <span class="analysis-card__action">Scarica PDF
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <a href="public/analisi olio 5 anni/2020 Analisi olio.pdf" class="analysis-card" target="_blank" rel="noopener" download>
-            <div class="analysis-card__year">2020</div>
-            <div class="analysis-card__info">
+            </a>
+            <a href="public/analisi olio 5 anni/2020 Analisi olio.pdf" class="analysis-card" target="_blank" rel="noopener" download>
+              <span class="analysis-card__year">2020</span>
               <span class="analysis-card__label">Analisi olio</span>
-              <span class="analysis-card__action">Scarica PDF
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/></svg>
-              </span>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -208,6 +190,10 @@
         <div class="section-header fade-in">
           <h2 id="process-heading" data-i18n="oil.process.title">Dal Campo alla Bottiglia</h2>
           <p data-i18n="oil.process.subtitle">Ogni goccia racconta il percorso delle nostre olive: dalla brucatura a mano fino al frantoio, seguendo l'antica tradizione di famiglia.</p>
+        </div>
+
+        <div class="process-hero fade-in">
+          <img src="public/ape-zagara-olivo.jpeg" alt="Ape sulla zagara dell'olivo" loading="lazy" width="800" height="400">
         </div>
 
         <div class="process-timeline">
@@ -248,14 +234,28 @@
       </div>
     </section>
 
+    <!-- --- VIDEO FRANTOIO --- -->
+    <section class="section section--video" aria-labelledby="frantoio-video-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2 id="frantoio-video-heading" data-i18n="oil.video.title">L'Arte della Molitura</h2>
+        </div>
+        <div class="video-wrapper fade-in">
+          <video controls preload="metadata" playsinline>
+            <source src="public/finale-video-tenuta-ducale-720.mov" type="video/quicktime">
+            <source src="public/finale-video-tenuta-ducale-720.mov" type="video/mp4">
+            Il tuo browser non supporta la riproduzione video.
+          </video>
+        </div>
+      </div>
+    </section>
+
     <!-- --- CONSIGLI --- -->
     <section class="section section--dark" aria-labelledby="tips-heading">
       <div class="container">
-        <div class="two-col fade-in">
+        <div class="two-col two-col--img-below-mobile fade-in">
           <div class="two-col__img">
-            <video autoplay muted loop playsinline preload="metadata" width="600" height="450" style="width:100%; height:100%; object-fit:cover; border-radius:var(--radius-lg);">
-              <source src="public/pasta con le fave.mp4" type="video/mp4">
-            </video>
+            <img src="public/8H9A7953.webp" alt="Uliveto nella Valle del Belice" loading="lazy" width="600" height="450">
           </div>
           <div class="two-col__text">
             <h2 id="tips-heading" data-i18n="oil.tips.title">Consigli</h2>
@@ -319,7 +319,7 @@
       <div class="footer__grid">
         <div>
           <a href="index.html" class="footer__logo"><img src="public/Logo Tenuta Ducale-3.png" alt="Tenuta Ducale" width="150" height="70"></a>
-          <p class="footer__tagline" data-i18n="footer.tagline">Olio di famiglia, biologico</p>
+          <p class="footer__tagline" data-i18n="footer.tagline">Amorevole Passione</p>
         </div>
         <div>
           <h3 data-i18n="footer.nav">Navigazione</h3>
@@ -379,6 +379,154 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-1-6a1 1 0 1 0 1 1 1 1 0 0 0-1-1zm4-4a1 1 0 1 0 1 1 1 1 0 0 0-1-1zm-6-2a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 9 8z"/></svg>
   </button>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var anni = ['2020', '2021', '2022', '2023', '2024', '2025'];
+      var acidita = [0.18, 0.11, 0.15, 0.18, 0.15, 0.14];
+      var perossidi = [6.1, 3.84, 4.7, 4.2, 9.3, 6.0];
+      var polifenoli = [242, 265.3, 325, 269, 371, 275.4];
+
+      var verde = '#3b5e50';
+      var oro = '#B98C34';
+      var verdeCh = 'rgba(59, 94, 80, 0.15)';
+      var oroCh = 'rgba(185, 140, 52, 0.15)';
+
+      var fontFamily = '"Inria Serif", serif';
+      var defaults = {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+          legend: { labels: { font: { family: fontFamily, size: 13 }, usePointStyle: true, pointStyle: 'circle' } },
+          tooltip: { titleFont: { family: fontFamily }, bodyFont: { family: fontFamily } }
+        },
+        scales: {
+          x: { ticks: { font: { family: fontFamily, size: 12 } }, grid: { display: false } }
+        }
+      };
+
+      new Chart(document.getElementById('chart-acidita-perossidi'), {
+        type: 'line',
+        data: {
+          labels: anni,
+          datasets: [
+            {
+              label: 'Acidità (% ac. oleico)',
+              data: acidita,
+              borderColor: verde,
+              backgroundColor: verdeCh,
+              fill: true,
+              tension: 0.35,
+              pointRadius: 5,
+              pointBackgroundColor: verde,
+              yAxisID: 'y'
+            },
+            {
+              label: 'Perossidi (meq O₂/kg)',
+              data: perossidi,
+              borderColor: oro,
+              backgroundColor: oroCh,
+              fill: true,
+              tension: 0.35,
+              pointRadius: 5,
+              pointBackgroundColor: oro,
+              yAxisID: 'y1'
+            }
+          ]
+        },
+        options: Object.assign({}, defaults, {
+          scales: {
+            x: defaults.scales.x,
+            y: {
+              type: 'linear', position: 'left',
+              title: { display: true, text: 'Acidità (% ac. oleico)', font: { family: fontFamily, size: 12 }, color: verde },
+              ticks: { font: { family: fontFamily, size: 11 }, color: verde },
+              grid: { color: 'rgba(59, 94, 80, 0.08)' }
+            },
+            y1: {
+              type: 'linear', position: 'right',
+              title: { display: true, text: 'Perossidi (meq O₂/kg)', font: { family: fontFamily, size: 12 }, color: oro },
+              ticks: { font: { family: fontFamily, size: 11 }, color: oro },
+              grid: { drawOnChartArea: false }
+            }
+          }
+        })
+      });
+
+      new Chart(document.getElementById('chart-polifenoli'), {
+        type: 'bar',
+        data: {
+          labels: anni,
+          datasets: [{
+            label: 'Polifenoli totali (mg/kg)',
+            data: polifenoli,
+            backgroundColor: verde,
+            borderRadius: 6,
+            barPercentage: 0.6
+          }]
+        },
+        options: Object.assign({}, defaults, {
+          scales: {
+            x: defaults.scales.x,
+            y: {
+              beginAtZero: false,
+              min: 200,
+              title: { display: true, text: 'mg/kg ac. gallico', font: { family: fontFamily, size: 12 }, color: verde },
+              ticks: { font: { family: fontFamily, size: 11 } },
+              grid: { color: 'rgba(59, 94, 80, 0.08)' }
+            }
+          }
+        })
+      });
+
+      var anniSens = ['2022', '2023', '2024', '2025'];
+      var fruttato = [3.9, 4.1, 3.8, 3.9];
+      var amaro = [3.0, 3.3, 3.8, 3.0];
+      var piccante = [4.6, 3.8, 3.8, 3.9];
+
+      var colori = [verde, oro, '#8B5E3C', '#6B8E5A'];
+      var fondoColori = ['rgba(59,94,80,0.2)', 'rgba(185,140,52,0.2)', 'rgba(139,94,60,0.2)', 'rgba(107,142,90,0.2)'];
+
+      new Chart(document.getElementById('chart-sensoriale'), {
+        type: 'bar',
+        data: {
+          labels: anniSens,
+          datasets: [
+            { label: 'Fruttato', data: fruttato, backgroundColor: verde, borderRadius: 4, barPercentage: 0.75 },
+            { label: 'Amaro', data: amaro, backgroundColor: oro, borderRadius: 4, barPercentage: 0.75 },
+            { label: 'Piccante', data: piccante, backgroundColor: '#6B8E5A', borderRadius: 4, barPercentage: 0.75 }
+          ]
+        },
+        options: Object.assign({}, defaults, {
+          scales: {
+            x: defaults.scales.x,
+            y: {
+              beginAtZero: true,
+              max: 6,
+              title: { display: true, text: 'Mediana', font: { family: fontFamily, size: 12 }, color: verde },
+              ticks: { font: { family: fontFamily, size: 11 }, stepSize: 1 },
+              grid: { color: 'rgba(59, 94, 80, 0.08)' }
+            }
+          },
+          plugins: {
+            legend: { labels: { font: { family: fontFamily, size: 13 }, usePointStyle: true, pointStyle: 'circle' } },
+            tooltip: {
+              titleFont: { family: fontFamily }, bodyFont: { family: fontFamily },
+              callbacks: { afterBody: function() { return 'Difetto: 0 — Erba/Pomod./Carciofo: > 2 e ≤ 8'; } }
+            }
+          }
+        })
+      });
+
+      var toggle = document.querySelector('.analysis-dropdown__toggle');
+      var content = document.querySelector('.analysis-dropdown__content');
+      toggle.addEventListener('click', function () {
+        var open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !open);
+        content.classList.toggle('analysis-dropdown__content--open');
+      });
+    });
+  </script>
 </body>
 </html>
