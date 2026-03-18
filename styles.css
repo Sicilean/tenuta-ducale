@@ -561,6 +561,10 @@ select:focus-visible {
   height: 70vh;
 }
 
+.hero--home.hero--contact {
+  height: 80vh;
+}
+
 .hero--home::before {
   background: linear-gradient(
     to bottom,
@@ -568,6 +572,13 @@ select:focus-visible {
     rgba(59, 94, 80, 0.25) 40%,
     rgba(59, 94, 80, 0.2) 100%
   );
+}
+
+@media (max-width: 768px) {
+  .hero--home.hero--contact {
+    height: 70vh;
+    min-height: 0;
+  }
 }
 
 .hero--home::after {
