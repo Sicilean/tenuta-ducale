@@ -576,8 +576,16 @@ select:focus-visible {
 
 @media (max-width: 768px) {
   .hero--home.hero--contact {
-    height: 70vh;
+    height: 50vh;
     min-height: 0;
+  }
+
+  .hero--contact .hero__title {
+    font-size: clamp(3.25rem, 12vw, 4.5rem);
+  }
+
+  .hero--contact .hero__subtitle {
+    font-size: clamp(0.9rem, 3.8vw, 1rem);
   }
 }
 
